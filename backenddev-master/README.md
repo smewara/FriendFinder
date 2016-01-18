@@ -1,7 +1,8 @@
 Features : 
 * Ability to friend and unfriend people
 * Get a list of a user's friends
-* Get a list of a user's potential friends (this addresses the question above directly)
+* Get a list of a user's potential friends
+* Find connection between two people. Susan->Sarah->Joe->Hardy
 
 The solution consists of UserController, FriendsController & FriendNetworkController. 
 Most of the methods accept a "Request" parameter and return a "Response" parameter with status "Sucess" or "Error" 
