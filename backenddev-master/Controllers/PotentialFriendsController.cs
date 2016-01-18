@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using Bluebeam.Data.Responses;
-using Bluebeam.ServiceBase;
-using frdsCntrl = Bluebeam.Controllers.ServiceControllers.FriendsController;
+using FriendFinder.Data.Responses;
+using FriendFinder.ServiceBase;
+using frdsCntrl = FriendFinder.ServiceControllers.FriendsController;
 
-namespace Bluebeam.Controllers
+namespace FriendFinder.Controllers
 {
     /// <summary>
     /// Potential friends controller
@@ -31,7 +31,7 @@ namespace Bluebeam.Controllers
         [Route("potentialfriends/{userId}")]
         public Response<IEnumerable<UserResponse>> Get(int userId)
         {
-            return BluebeamServiceBase.GetResponse(userId, (a, result) => _friendsController.GetAllPotentialFriends(userId, result));
+            return FriendFinderServiceBase.GetResponse(userId, (a, result) => _friendsController.GetAllPotentialFriends(userId, result));
         }
     }
 }

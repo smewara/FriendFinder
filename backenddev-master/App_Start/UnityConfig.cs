@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using Bluebeam.Data.Data;
-using Bluebeam.Database.Repositories;
+using FriendFinder.Data.Data;
+using FriendFinder.Database.Repositories;
 using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Unity.WebApi;
 
-namespace Bluebeam
+namespace FriendFinder
 {
     /// <summary>
     /// Unity Container
@@ -25,8 +25,8 @@ namespace Bluebeam
             container.RegisterType<IFriendRepo, FriendRepo>(new ContainerControlledLifetimeManager());
             container.RegisterType<IFriendNetworkRepo, FriendNetworkRepo>(new ContainerControlledLifetimeManager());
             container.RegisterType<IUnitOfWork, UnitOfWork>(new ContainerControlledLifetimeManager(), new InjectionConstructor(container.Resolve<IDictionary<int, User>>()));
-            container.RegisterType<Controllers.ServiceControllers.FriendsController, Controllers.ServiceControllers.FriendsController>();
-            container.RegisterType<Controllers.ServiceControllers.UsersController, Controllers.ServiceControllers.UsersController>();
+            container.RegisterType<ServiceControllers.FriendsController, ServiceControllers.FriendsController>();
+            container.RegisterType<ServiceControllers.UsersController, ServiceControllers.UsersController>();
             
             config.DependencyResolver = new UnityDependencyResolver(container);
             

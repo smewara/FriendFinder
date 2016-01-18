@@ -4,7 +4,7 @@ using System.Net.Http;
 using System;
 using System.Web;
 
-namespace Bluebeam
+namespace FriendFinder
 {
     /// <summary>
     /// 
@@ -20,7 +20,7 @@ namespace Bluebeam
             config
                 .EnableSwagger(c =>
                 {
-                    c.SingleApiVersion("v2", "Bluebeam");
+                    c.SingleApiVersion("v2", "FriendFinder");
                     c.RootUrl(GetBasePath);
                     c.IncludeXmlComments(GetXmlCommentsPath());
                 })
@@ -34,7 +34,7 @@ namespace Bluebeam
 
         private static string GetXmlCommentsPath()
         {
-            return string.Format(@"{0}\bin\Bluebeam.xml", AppDomain.CurrentDomain.BaseDirectory);
+            return string.Format(@"{0}\bin\FriendFinder.xml", AppDomain.CurrentDomain.BaseDirectory);
         }
     }
 }

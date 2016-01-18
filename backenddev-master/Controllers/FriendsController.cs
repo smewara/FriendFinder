@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using Bluebeam.Data.Requests;
-using Bluebeam.Data.Responses;
-using Bluebeam.ServiceBase;
-using frdsCntrl = Bluebeam.Controllers.ServiceControllers.FriendsController;
+using FriendFinder.Data.Requests;
+using FriendFinder.Data.Responses;
+using FriendFinder.ServiceBase;
+using frdsCntrl = FriendFinder.ServiceControllers.FriendsController;
 
-namespace Bluebeam.Controllers
+namespace FriendFinder.Controllers
 {
     /// <summary>
     /// Friends Controller
     /// </summary>
-    public class FriendsController : ApiController, IBluebeamServiceBase
+    public class FriendsController : ApiController, IFriendFinderServiceBase
     {
         private readonly frdsCntrl _friendsController;
         
@@ -32,7 +32,7 @@ namespace Bluebeam.Controllers
         [Route("friends")]
         public Response Put(Request<UserFriendRequest> request)
         {
-            return BluebeamServiceBase.GetResponse<UserFriendRequest>(request, (req, result) => _friendsController.AddFriend(request.Parameter, result));  
+            return FriendFinderServiceBase.GetResponse<UserFriendRequest>(request, (req, result) => _friendsController.AddFriend(request.Parameter, result));  
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Bluebeam.Controllers
         {
             var request = new UserFriendRequest { UserId = userId, FriendId = friendId };
 
-            return BluebeamServiceBase.GetResponse(request, (req, result) => _friendsController.DeleteFriend(request, result));
+            return FriendFinderServiceBase.GetResponse(request, (req, result) => _friendsController.DeleteFriend(request, result));
         }
 
 
@@ -61,7 +61,7 @@ namespace Bluebeam.Controllers
         public Response<IEnumerable<UserResponse>> Get(int userId)
         {
 
-            return BluebeamServiceBase.GetResponse(userId, (a, result) => _friendsController.Get(userId, result));
+            return FriendFinderServiceBase.GetResponse(userId, (a, result) => _friendsController.Get(userId, result));
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Bluebeam.Controllers
         [Route("friends")]
         public Response<IEnumerable<UsersConnectionResponse>> Post(UserFriendRequest request)
         {
-            return BluebeamServiceBase.GetResponse(request, (req, result) => _friendsController.GetShortestConnection(request, result));
+            return FriendFinderServiceBase.GetResponse(request, (req, result) => _friendsController.GetShortestConnection(request, result));
         }
 
      

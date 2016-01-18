@@ -1,60 +1,32 @@
-Bluebeam Software, Inc.
-
-55 South Lake
-
-Pasadena, CA 91101
-
-# What is Bluebeam looking for in a *Back-End Developer*?
-
-We are looking for talented software engineers that understand both SOA and CAA because we offer both Enterprise and Cloud system offerings.
-
-Really, it all boils down to the following:
-* We want engineers that can build new services or integrate existing services with ease
-* We want engineers that understand how to scale services vertically (up) and horizontally (out)
-* We want engineers that can design algorithms at scale and understand time and space complexity well
-* We want engineers that know how to build software using SOLID principles
-* We want engineers that are familiar with design patterns (i.e. Gang of Four) and have a firm understanding of object oriented programming
-* *Most importantly* we want engineers that are quick learners and can apply their knowledge to solve difficult problems
-
-## What can You expect from a *Back-End Developer* position?
-
-As a *Back-End Developer*, you will be an integral part of the **Studio Team** and will be enhancing/extending the realtime collaboration services that integrate tightly with our flagship product **Revu**. Studio is powered by AWS technologies and so you will have cloud computing at your fingertips.
-
-# Homework Problem for Back-End Developer Position
-
-How would you will design the data structures for a very large social network like Facebook or LinkedIn? Describe how you would design an algorithm to show the connection between two people (e.g., Me -> Bob -> Susan -> Jason -> You).
-
-We provide you with an .NET Web API project to extend (it uses an in memory data store). You will be designing the data structures and methods on the back end to materialize the following features:
-
+Features : 
 * Ability to friend and unfriend people
 * Get a list of a user's friends
 * Get a list of a user's potential friends (this addresses the question above directly)
 
-We will start you off with the key resource *users*:
-
-![](images/users.png)
+The solution consists of UserController, FriendsController & FriendNetworkController. 
+Most of the methods accept a "Request" parameter and return a "Response" parameter with status "Sucess" or "Error" 
+with additional message in case of an exception. Test cases written to test each of the major functions.
 
 You can get a visual of your API by visiting http://localhost/swagger/ui/index whenever you build.
 
-The rest is up to you. Good luck!
+UsersController methods :
 
-## Where do I get the code from?
+Add new user : provide username and password in request parameter
+GetAllUsers 
+Get a specific user : provide userid.
 
-Simply clone this repository and start coding.
 
-```
-git clone https://github.com/bluebeamdev/backenddev.git
-```
+FriendsController methods :
 
-## What you will submit
+Add a friend : provide userfriendrequest parameter. specify two user ids to want to be friends of each other.
+Remove a friend : takes in a user id and another id that is a friend's id.
+Get All friends of a user : specify user id
+Find connection between two users : provide userA id and userB id. 
+Get all connecting paths between userA and userB except those that have a shorter path subset. 
+userA -> Susan -> Joe -> userB.
 
-Please create a zip file and send it over to the recruiter when you are finished. It should include the following:
-* Your Solution folder and projects
-* A README file with examples on how to use your API and anything you want to address (i.e. concerns, open questions, etc.)
+PotentialFriendsController methods :
 
-## What we expect
+Get all potential fiends of a user : specify user id you want to find potential friends of. 
+Get all friends of friends of friends till all possible connected nodes from userA can be reached.
 
-There is no right or wrong answser. We want to see your ability to solve problems.
-That being said, don't leave anything out. We will be going over everything!
-
-Have fun and good luck!

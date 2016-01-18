@@ -2,9 +2,9 @@
 using Owin;
 using System.Web.Http;
 
-[assembly: OwinStartup(typeof(Bluebeam.Startup))]
+[assembly: OwinStartup(typeof(FriendFinder.Startup))]
 
-namespace Bluebeam
+namespace FriendFinder
 {
     /// <summary>
     /// 
