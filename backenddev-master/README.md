@@ -29,7 +29,8 @@ FriendsController methods :
 
 	Find connection between two users : provide userA id and userB id. Get all connecting paths between userA and userB except those that have a shorter path subset. Susan->Sarah->Joe->Hardy.
 
-	PotentialFriendsController methods :
+
+PotentialFriendsController methods :
 
 	Get all potential fiends of a user : specify user id you want to find potential friends of. Get all friends of friends of friends till all possible connected nodes from a user can be reached.
 
