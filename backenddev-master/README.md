@@ -1,4 +1,4 @@
-Features : 
+<b>Features</b> : 
 
 * Ability to friend and unfriend people
 * Get a list of a user's friends
@@ -19,7 +19,7 @@ UsersController methods :
 	Get a specific user : provide userid.
 
 
-Friendscontroller methods :
+FriendsBontroller methods :
 
 	Add a friend : provide userfriendrequest parameter. specify two user ids to want to be friends of each other.
 
@@ -29,8 +29,8 @@ Friendscontroller methods :
 
 	Find connection between two users : provide userA id and userB id. Get all connecting paths between userA and userB except those that have a shorter path subset. Susan->Sarah->Joe->Hardy.
 
-PotentialFriendsController methods :
+<b>PotentialFriendsController methods :</b>
 
-Get all potential fiends of a user : specify user id you want to find potential friends of. Get all friends of friends of friends till all possible connected nodes from a user can be reached.
+	Get all potential fiends of a user : specify user id you want to find potential friends of. Get all friends of friends of friends till all possible connected nodes from a user can be reached.
 
 
