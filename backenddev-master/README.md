@@ -19,7 +19,7 @@ UsersController methods :
 	Get a specific user : provide userid.
 
 
-FriendsBontroller methods :
+FriendsController methods :
 
 	Add a friend : provide userfriendrequest parameter. specify two user ids to want to be friends of each other.
 
