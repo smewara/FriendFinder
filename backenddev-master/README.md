@@ -1,4 +1,5 @@
-<b>Features</b> : 
+Features : 
+
 * Ability to friend and unfriend people
 * Get a list of a user's friends
 * Get a list of a user's potential friends
@@ -30,7 +31,6 @@ Friendscontroller methods :
 
 PotentialFriendsController methods :
 
-Get all potential fiends of a user : specify user id you want to find potential friends of. 
-Get all friends of friends of friends till all possible connected nodes from userA can be reached.
+Get all potential fiends of a user : specify user id you want to find potential friends of. Get all friends of friends of friends till all possible connected nodes from a user can be reached.
 
 
