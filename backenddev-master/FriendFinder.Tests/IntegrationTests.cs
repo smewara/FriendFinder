@@ -45,7 +45,7 @@ namespace FriendFinder.Tests
         IUnitOfWork _unitOfWork;
         IDictionary<int, User> _usersDictionary;
         MockUser _mockUser;
-        const int Total = 100;
+        const int Total = 50000;
         Random _random;
         private UniqueIdMock _uniqueIdMock;
 
